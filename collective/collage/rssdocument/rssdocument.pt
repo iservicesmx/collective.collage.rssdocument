@@ -30,7 +30,8 @@
           tal:attributes="src string:${portal_url}/++resource++jquery.zrssfeed.min.js">
   </script>
 
-  <div id="rsscontainer" >
+  <div id="rsscontainer" 
+      tal:attributes="id string:rsscontainer-${context/UID}">
           <p i18n:translate="">Loading RSS items. Please wait ...</p>
   </div>
   <script type="text/javascript"

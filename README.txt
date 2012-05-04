@@ -25,8 +25,8 @@ Credits
 zRSSFeed jQuery Plugin has been made by Zazar Ltd. All rights reserved.
 http://www.zazar.net/developers/zrssfeed/
 
-
-Noe Nieto <noe@iservices.com.mx>
+Noe Nieto <tzicatl@gmail.com>
+Erik Rivera <erik.river@gmail.com>
 
 iservices.rssdocument has been made by iServices de Mexico.
 
