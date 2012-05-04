@@ -1,0 +1,20 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:five="http://namespaces.zope.org/five"
+           xmlns:browser="http://namespaces.zope.org/browser">
+  
+  <five:registerPackage package="." initialize=".initialize" />
+
+  <include package="Products.Collage" />
+  <include package="iservices.rssdocument" />
+  
+
+  <browser:page
+     name="standard"
+     for="iservices.rssdocument.interfaces.IRSSDocument"
+     permission="zope2.Public"
+     template="rssdocument.pt"
+     class="Products.Collage.browser.views.StandardView"
+     layer="Products.Collage.interfaces.ICollageBrowserLayer"
+     />
+    
+</configure>

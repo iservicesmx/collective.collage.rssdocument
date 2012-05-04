@@ -1,0 +1,41 @@
+<tal:manager replace="structure provider:collage.ContentManager" />
+
+<tal:folder define="plone_view here/@@plone;
+                    toLocalizedTime nocall: plone_view/toLocalizedTime">
+
+  <h2 metal:define-macro="title"
+      tal:define="kssview context/@@collage_kss_helper"
+      tal:attributes="id string:${kssview/getUniqueIdentifier}-title;
+                      class python: kssview.getKssClasses('title')"
+      tal:condition="here/Title">
+    <span metal:define-slot="inside"
+          tal:replace="here/Title">title</span>
+  </h2>
+
+  <p>
+    <span metal:define-macro="description"
+          tal:define="kssview context/@@collage_kss_helper"
+          tal:attributes="id string:${kssview/getUniqueIdentifier}-description;
+                          class python: kssview.getKssClasses('description')"
+          tal:condition="here/Description">
+      <span metal:define-slot="inside"
+            tal:replace="here/Description">description</span>
+    </span>
+  </p>
+
+  <script type="application/x-javascript"
+          src="++resource++jquery.zrssfeed.min.js"
+          tal:define="portal_state context/@@plone_portal_state;
+                      portal_url portal_state/portal_url;"
+          tal:attributes="src string:${portal_url}/++resource++jquery.zrssfeed.min.js">
+  </script>
+
+  <div id="rsscontainer" >
+          <p i18n:translate="">Loading RSS items. Please wait ...</p>
+  </div>
+  <script type="text/javascript"
+          src="@@rss_code.js"
+          tal:attributes="src string:${context/absolute_url}/@@rss_code.js">
+  </script>
+
+</tal:folder>
